@@ -14,5 +14,6 @@
     <modules>
         <module>distributed-unique-id-generator</module>
         <module>url-shortener</module>
+        <module>messenger</module>
     </modules>
 </project>
