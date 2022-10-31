@@ -6,7 +6,7 @@ object FindElementsWhoseSumIsN {
         println(findElements(arr, n))
     }
 
-    fun findElements(arr: Array<Int>, n: Int): List<Int> {
+    private fun findElements(arr: Array<Int>, n: Int): List<Int> {
         val gathered = mutableListOf<Int>()
         parts(n, arr, gathered, 0)
         return gathered
