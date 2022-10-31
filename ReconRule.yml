@@ -1,0 +1,58 @@
+name: ""
+tags: [ "tag a", "tag b" ]
+nextRuleDataPassStrategy: "OnlyUnMatched | All | None"
+
+Filters:
+  - Field: Sales.Tags
+    Operator:
+      Name: Contains
+      Metadata:
+        Fuzzy: false
+    Values: [ "Valid" ]
+
+  - Field: TdsLedger.Tags
+    Operator:
+      Name: Contains
+      Metadata:
+        Fuzzy: false
+    Values: [ "Valid" ]
+
+  - Field: 26AS.Tags
+    Operator:
+      Name: Contains
+      Metadata:
+        Fuzzy: false
+    Values: [ "Valid" ]
+
+Sorts:
+  - Field: Sales.Date
+    Order: Ascending
+
+  - Field: TdsLedger.Date
+    Order: Ascending
+
+  - Field: 26AS.Date
+    Order: Ascending
+
+MatchConditions:
+  - FieldA: Sales.Invoicenumber
+    Operator:
+      Name: StringEquals
+      Metadata:
+        Fuzzy: false
+    FieldB: TdsLedger.InvoiceNumber
+
+  - FieldA: TdsLedger.Tds
+    Operator:
+      Name: Equals
+      Metadata:
+        Tolerance: 1.0
+    FieldB: 26AS.Tds
+
+  - FieldA: TdsLedger.Date
+    Operator:
+      Name: DateEquals
+      Metadata:
+        DayTolerance: 1
+    FieldB: 26AS.Date
+

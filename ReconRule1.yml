@@ -1,0 +1,10 @@
+dataSources:
+    - id: "sales"
+      predicate: "date(transactionDate,'YYYY-MM-DD') >= '2021-04-01' and date(transactionDate,'YYYY-MM-DD') < '2022-04-01'"
+      bucketFields: ["entityId"]
+    - id: "tdsLedger"
+      predicate: "date(transactionDate,'YYYY-MM-DD') >= '2021-04-01' and date(transactionDate,'YYYY-MM-DD') < '2022-04-01'"
+      bucketFields: ["entityId"]
+    - id: "26as"
+      predicate: "date(transactionDate,'YYYY-MM-DD') >= '2021-04-01' and date(transactionDate,'YYYY-MM-DD') < '2022-04-01'"
+      bucketFields: ["entityId"]
